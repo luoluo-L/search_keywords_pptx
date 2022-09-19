@@ -11,4 +11,7 @@ python search_keywords_from_pptx_slides.py PPTXFOLDER keyword
 
 ```
 
-TODO: filter out files in the specified folder that are not ppt slides.
+Completed: filter out files in the specified folder that are not ppt slides.
+
+Check: 
+package can't read tmp/hidden file, for example: Folder\~$**.pptx
