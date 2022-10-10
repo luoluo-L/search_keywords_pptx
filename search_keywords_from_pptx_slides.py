@@ -9,6 +9,9 @@ from pptx import Presentation
 import glob
 import os
 
+
+
+
 if __name__ == '__main__':
 
     #test_pptx_path = "Test Path with pptx slides"
