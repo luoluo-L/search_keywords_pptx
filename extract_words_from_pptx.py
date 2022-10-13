@@ -49,7 +49,29 @@ def get_word_from_ppt_folder(pptx_folder_path):
 
     return all_text_dict
 
+def preprocess_each_text(text_list_of_list):
 
+    devide_str = ' '
+    test_concatinate = devide_str.join((str(n) for n in test_text if len(n)>0))
+
+    return test_concatinate
+
+def get_keywords_keyphrase(test_concatinate):
+    # minimal example
+    from keybert import KeyBERT
+
+    kw_model = KeyBERT()
+    keywords = kw_model.extract_keywords(test_concatinate)
+    print('Keywords')
+    print(keywords)
+
+    # extract phrases
+    keyphrases = kw_model.extract_keywords(test_concatinate, keyphrase_ngram_range=(1, 4), stop_words='english',
+                                           use_mmr=True, diversity=0.7)
+    print('Key Phrases')
+    print(keyphrases)
+
+    return keywords, keyphrases
 
 if __name__ == "__main__":
 
@@ -57,23 +79,14 @@ if __name__ == "__main__":
 
     text_dictionary_from_folder = get_word_from_ppt_folder(test_pptx_path)
 
-    test_file = list(text_dictionary_from_folder.keys())[0]
+    test_file = list(text_dictionary_from_folder.keys())[1]
+    for cur_key in text_dictionary_from_folder.keys():
+        test_file = cur_key
+        print(test_file.split('\\')[-1])
+        test_text = text_dictionary_from_folder[test_file]
 
-    test_text = text_dictionary_from_folder[test_file]
+        text_cat = preprocess_each_text(test_text)
 
-    devide_str = ' '
-    test_concatinate = devide_str.join((str(n) for n in test_text if len(n)>0))
-
-    # minimal example
-    from keybert import KeyBERT
-
-    kw_model = KeyBERT()
-    keywords = kw_model.extract_keywords(test_concatinate)
-    print(keywords)
-
-    # extract phrases
-    keyphrases = kw_model.extract_keywords(test_concatinate, keyphrase_ngram_range=(1, 4), stop_words='english',
-                              use_mmr=True, diversity=0.7)
-    print(keyphrases)
-
+        keywords, key_phrases = get_keywords_keyphrase(text_cat)
+        print('\n')
 
