@@ -1,4 +1,5 @@
-search_keywords_from_pptx_slides.py: search a keyword from powerpoint slides from a folder.
+Search a **keyword** from powerpoint slides from a folder:
+search_keywords_from_pptx_slides.py.
 
 Input: folder name, keyword.
 
@@ -15,3 +16,11 @@ Completed: filter out files in the specified folder that are not ppt slides.
 
 Check: 
 package can't read tmp/hidden file, for example: Folder\~$**.pptx
+
+
+**Keyword and Keyphrase summarization** from powerpoint slide (pptx): 
+extract_words_from_pptx.py
+
+```sh
+python extract_words_from_pptx.py
+```
