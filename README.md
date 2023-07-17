@@ -29,3 +29,10 @@ run code from the command line:
 ```sh
 python extract_words_from_pptx.py
 ```
+
+Sample results 
+
+<img src='ppt_slides_repo.jpg' width='800'>
+
+input slides is from https://luoluo-l.github.io/files/sbm_gnn.pdf
+
