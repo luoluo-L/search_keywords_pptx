@@ -34,5 +34,5 @@ Sample results
 
 <img src='ppt_slides_repo.jpg' width='800'>
 
-input slides is from https://luoluo-l.github.io/files/sbm_gnn.pdf
+input slides can be found at https://luoluo-l.github.io/files/sbm_gnn.pdf
 
